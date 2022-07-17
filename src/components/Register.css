@@ -7,7 +7,7 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  height: 70vh;
+  height: 75vh;
 }
 
 .form {
@@ -16,6 +16,7 @@
   padding: 2rem;
   min-width: 80%;
   margin: 2rem;
+  height: 62vh;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   
 }
