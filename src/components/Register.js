@@ -3,16 +3,16 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import React, { useState } from "react";
+import { useHistory, Link } from "react-router-dom";
 import { config } from "../App";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Register.css";
 
-
 const Register = () => {
   const { enqueueSnackbar } = useSnackbar();
 
-  
+  const history = useHistory();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -83,6 +83,7 @@ const Register = () => {
           { variant: "error" });
       }
     }
+      history.push("/login", { from: "Register" })
   }
     // TODO: CRIO_TASK_MODULE_REGISTER - Implement user input validation logic
     /**
@@ -189,9 +190,10 @@ const Register = () => {
             </Button> */}
               <p className="secondary-action">
                 Already have an account?{" "}
-                <a className="link" href="#">
+                <Link to="/login" className="link">Login Here</Link>
+                {/* <a className="link" href="/login">
                   Login here
-                </a>
+                </a> */}
               </p>
             </Stack>
           </Box>
