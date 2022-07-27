@@ -6,6 +6,7 @@ import { BrowserRouter as Router,
   Link } from "react-router-dom";
 import Login from "./components/Login";
 import Products from "./components/Products";
+import ProductCard from "./components/ProductCard";
 import { ThemeProvider } from "@mui/system";
 
 
@@ -42,13 +43,14 @@ function App() {
             <Register />
           </Route>
           <Route path="/">
-            <Products />
+              <Products />
+              {/* <ProductCard /> */}
           </Route>
         </Switch>
           </div>
          
     </Router>
-  );
+  
 
 
       {/* TODO: CRIO_TASK_MODULE_LOGIN - To add configure routes and their mapping */}

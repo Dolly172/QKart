@@ -52,6 +52,7 @@ const Register = () => {
    *      "success": false,
    *      "message": "Username is already taken"
    * }
+   * 
    */
   const register = async (formData) => {
    
