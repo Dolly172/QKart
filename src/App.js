@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Products from "./components/Products";
 import ProductCard from "./components/ProductCard";
 import { ThemeProvider } from "@mui/system";
+import Checkout from "./components/Checkout";
 
 
 export const config = {
@@ -45,6 +46,9 @@ function App() {
           <Route path="/">
               <Products />
               {/* <ProductCard /> */}
+            </Route>
+            <Route path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
           </div>

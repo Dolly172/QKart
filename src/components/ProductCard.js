@@ -9,43 +9,36 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import Footer from "./Footer";
 import "./ProductCard.css";
-import { CardActionArea } from '@mui/material';
-// import Products from "./Products";
 
 const ProductCard = ({ product , handleAddToCart }) => {
  
-
-  return (
-  
-    <div>
-      
-    <Card className="card" sx={{ maxWidth: 345 }}>
-     
-        <CardMedia
-          component="img"
-          src={product?.image}
-          alt={product?.name}
-        />
-        <CardContent>
-          <Typography>
-            {product?.name}
-          </Typography>
-          <Typography fontWeight="700">
-          ${product?.cost}
-          </Typography>
-          <Rating name="read-only" value={product?.rating} precision={0.5} readOnly/>
-          </CardContent>
-          <Button className="card-button" variant="contained">ADD TO CART</Button>
-     
-      </Card>
-      
-    </div>
-    
-   
-  
+return (
+    <Card className="card">
+      <CardMedia component="img"
+        image={product.image}
+        alt="image" />
+      <CardContent>
+        <Typography variant="subtitle1" gutterBottom>{product.name}</Typography>
+        <Typography className="card-actions" style={{ fontWeight: "bold" }} variant="subtitle1" gutterBottom>${product.cost}</Typography>
+        <Rating value={product.rating} readOnly/>
+      </CardContent>
+      <CardActions>
+        <Button fullWidth className="card-button" variant="contained" starIcon={<AddShoppingCartOutlined />}
+          onClick={handleAddToCart}>
+          ADD TO CART
+        </Button>
+      </CardActions>
+    </Card>
   );
+
+
+
+
+
+
+
+ 
 };
 
 export default ProductCard;
