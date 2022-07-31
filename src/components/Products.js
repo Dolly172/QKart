@@ -83,9 +83,7 @@ const Products = () => {
   const [cartItem, setCartItem] = useState([]);
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    performAPICall();
-  }, []);
+  
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -99,20 +97,24 @@ const Products = () => {
       //console.log(response.data);
       setProducts(response.data);
       setLoading(false);
+      // return response.data
+      
       const cartData = await fetchCart(token);
       setItems(cartData);
       const cart = await generateCartItemsFrom(cartData, response.data);
       setCartItem(cart);
+     
     } catch (e) {
       setLoading(false);
       if (e.response && e.response.status === 400) {
         enqueueSnackbar(e.response.data.message, { variant: "error" });
-      } else {
-        enqueueSnackbar(
-          "Something went wrong. Check that the backend is running, reachable and returns valid JSON.",
-          { variant: "error" }
-        );
       }
+      // else {
+      //   enqueueSnackbar(
+      //     "Something went wrong. Check that the backend is running, reachable and returns valid JSON.",
+      //     { variant: "error" }
+      //   );
+      // }
     }
   };
 
@@ -351,6 +353,24 @@ const Products = () => {
     }
   };
 
+  useEffect(() => {
+    
+       performAPICall();
+    
+  }, []);
+
+  //  useEffect(() => {
+    
+  //    const onLoad = async () => {
+  //    const cartData = await fetchCart(token);
+  //     setItems(cartData);
+  //     const cart = await generateCartItemsFrom(cartData, response.data);
+  //     setCartItem(cart);
+  // }
+  //    onLoad();
+  // }, []);
+
+ 
   //console.log(cartItem);
   return (
     <div>

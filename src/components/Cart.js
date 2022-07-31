@@ -262,7 +262,7 @@ const Cart = ({ products, items = [], handleQuantity, isReadOnly = false }) => {
               variant="contained"
               startIcon={<ShoppingCart />}
               className="checkout-btn"
-              onClick={(e) => history.push("/checkout")}
+              onClick={() => history.push("/checkout")}
             >
               Checkout
             </Button>

@@ -79,8 +79,8 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
         
         </Box>
           <Stack direction="row" spacing={1.5} variant='text'>
-          <Button variant='text' onClick={() => history.push("/login", { from: "Register" })}>LOGIN</Button>
-          <Button variant='contained' onClick={() => history.push("/register", { from: "Register" })}>REGISTER</Button>
+          <Button variant='text' onClick={() => history.push("/login")}>LOGIN</Button>
+          <Button variant='contained' onClick={() => history.push("/register")}>REGISTER</Button>
           </Stack>
             
         </>
