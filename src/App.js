@@ -7,8 +7,7 @@ import Checkout from "./components/Checkout";
 import Thanks from "./components/Thanks";
 
 export const config = {
-  endpoint: `https://qkart-frontend-by-dolly.herokuapp.com/api/v1`,
-  // endpoint: `http://${ipConfig.workspaceIp}:8082/api/v1`,
+  endpoint: `https://qkart-frontend-dolly.onrender.com/api/v1`,
 };
 
 function App() {
@@ -16,18 +15,18 @@ function App() {
     <div className="App">
       {/* TODO: CRIO_TASK_MODULE_LOGIN - To add configure routes and their mapping */}
       <Switch>
-<Route exact path="/" component={Products}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/register" component={Register}/>
-            <Route path="/checkout" component={Checkout}/>
-            <Route path="/thanks" component={Thanks}/>
+        <Route exact path="/" component={Products} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/thanks" component={Thanks} />
 
 
       </Switch>
-        
 
-      
-          
+
+
+
     </div>
   );
 }
